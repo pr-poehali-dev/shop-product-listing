@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Get all products",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create product",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Test Product",
+        "article": "TEST-001",
+        "description": "Test description",
+        "price": 1000,
+        "discount": 10,
+        "stock": 5,
+        "category_id": 1
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "name": "Test Product",
+        "article": "TEST-001"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
